@@ -44,8 +44,12 @@ class DBStorage:
                 database_dic[key] = objs
             return database_dic
         else:
-            for objs in DBStorage.__session.query(City, State, User,\
-                                             Place, Review, Amenity).all():
+            for objs in DBStorage.__session.query(City,
+                                                  State,
+                                                  User,
+                                                  Place,
+                                                  Review,
+                                                  Amenity).all():
                 key = "{}.{}".format(type(objs).__class__.__name__, objs.id)
                 database_dic[key] = objs
             return database_dic
