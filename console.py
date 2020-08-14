@@ -2,6 +2,7 @@
 """ Console Module """
 import cmd
 import sys
+from sys import executable
 from models.base_model import BaseModel
 from models.__init__ import storage
 from models.user import User
@@ -113,15 +114,44 @@ class HBNBCommand(cmd.Cmd):
         """ Overrides the emptyline method of CMD """
         pass
 
-    def do_create(self, args):
+    def do_create(self, line):
         """ Create an object of any class"""
 
-        if not args:
+        if not line:
             print("** class name missing **")
             return
-        elif args not in HBNBCommand.classes:
+        elif line not in HBNBCommand.classes:
             print("** class doesn't exist **")
             return
+        obj = HBNBCommand.classes()
+        my_line = line.split(" ")
+        if len(my_line) > 1:
+            for i in my_line:
+                j = i.split("=")
+                if len(j) == 2:
+                    key = j[0]
+                    value = j[1]
+                    if value[0] == '"' and value[-1] == '"':
+                        value = value[1:-1].replace("_", "")
+                    else:
+                        try:
+                            value = int(value)
+                        except ValueError:
+                            value = float(value)
+                    setattr(obj, key, value)
+        obj.save()
+        print(obj.id)
+
+
+
+
+
+
+
+
+
+
+
         new_instance = HBNBCommand.classes[args]()
         storage.save()
         print(new_instance.id)
