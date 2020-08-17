@@ -65,4 +65,4 @@ printf %s "server {
 }" > /etc/nginx/sites-available/default
 
 # restart Nginx server
-sudo nginx -s reload
+sudo service nginx restart
