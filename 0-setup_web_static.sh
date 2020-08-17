@@ -1,23 +1,29 @@
 #!/usr/bin/env bash
-#updates the list of available packages and their versions
+
+# updates the list of available packages and their versions
 sudo apt-get update
 
 # install nginx if no exist
 sudo apt-get install nginx -y
 
 # make dir: /data
+# -p flag: no error if existing
 sudo mkdir -p /data/
 
 # make dir: /data/web_static/
+# -p flag: no error if existing
 sudo mkdir -p /data/web_static/
 
 #make dir: /data/web_static/releases/
+# -p flag: no error if existing
 sudo mkdir -p /data/web_static/releases/
 
 # make dir: /data/web_static/shared/
+# -p flag: no error if existing
 sudo mkdir -p /data/web_static/shared/
 
 #make dir: /data/web_static/releases/test/
+# -p flag: no error if existing
 sudo mkdir -p /data/web_static/releases/test
 
 #make file HTML
