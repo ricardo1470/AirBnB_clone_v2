@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 # updates the list of available packages and their versions
 sudo apt-get update
 
@@ -14,7 +13,7 @@ sudo mkdir -p /data/
 # -p flag: no error if existing
 sudo mkdir -p /data/web_static/
 
-#make dir: /data/web_static/releases/
+# make dir: /data/web_static/releases/
 # -p flag: no error if existing
 sudo mkdir -p /data/web_static/releases/
 
@@ -22,11 +21,11 @@ sudo mkdir -p /data/web_static/releases/
 # -p flag: no error if existing
 sudo mkdir -p /data/web_static/shared/
 
-#make dir: /data/web_static/releases/test/
+# make dir: /data/web_static/releases/test/
 # -p flag: no error if existing
 sudo mkdir -p /data/web_static/releases/test
 
-#make file HTML
+# make file HTML
 printf %s "<html>
   <head>
   </head>
