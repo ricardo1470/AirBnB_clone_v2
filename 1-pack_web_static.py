@@ -2,7 +2,6 @@
 """ a Fabric script """
 from fabric.api import local
 from datetime import datetime
-import os.path
 
 
 def do_pack():
