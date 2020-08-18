@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """ a Fabric script """
-from fabric.api import local
+from fabric.api import *
 from datetime import datetime
 
 
@@ -14,14 +14,11 @@ def do_pack():
     minute = date_now.minute,
     second = date_now.second
 
-    file_date = "version/web_static_{}{}{}{}{}{}.tgz".format(year,
-                                                             month,
-                                                             day,
-                                                             hour,
-                                                             minute,
-                                                             second)
+    file_date = "versions/web_static_{}{}{}{}{}{}.tgz".format(year, month, day,
+                                                              hour, minute,
+                                                              second)
 
-    local("mkdir -p version")
+    local("mkdir -p versions")
     local("tar -cvzf {} web_static".format(file_date))
 
     return (file_date)
