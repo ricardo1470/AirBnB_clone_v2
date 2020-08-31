@@ -6,10 +6,11 @@ from flask import Flask
     Routes:
     /: display “Hello HBNB!”
     /hbnb: display “HBNB” 
-    /c/<text>: display “C ” followed by the valu
-     of the text variabl
+    /c/<text>: display “C ” followed by the value
+    of the text variable
     /python/(<text>): display “Python ”,
-    followed by the value of the text variable """
+    followed by the value of the text variable.
+    /number/<n>: display “n is a number” only if n is an integer """
 
 
 app = Flask(__name__)
