@@ -50,7 +50,6 @@ def number(n):
     return ('{} is a number'.format(n))
 
 
-@app.route('/number_template', strict_slashes=False)
 @app.route('/number_template/<int:n>/', strict_slashes=False)
 def number_template(n):
     """ display “n is a number” only if n is an integer """
