@@ -4,7 +4,7 @@
     listening on 0.0.0.0, port 5000
     Routes:
     /: display “Hello HBNB!”
-    /hbnb: display “HBNB” 
+    /hbnb: display “HBNB”
     /c/<text>: display “C ” followed by the valu
      of the text variable """
 from flask import Flask
@@ -26,7 +26,7 @@ def hbnb():
 
 
 @app.route('/c/<text>/', strict_slashes=False)
-def c(text = "value"):
+def c(text="value"):
     """ display “C ” followed by the value of the text variable """
     return ('C {}'.format(text.replace("_", " ")))
 
